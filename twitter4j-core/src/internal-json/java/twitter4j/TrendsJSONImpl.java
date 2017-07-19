@@ -55,6 +55,7 @@ import java.util.Iterator;
     }
 
     TrendsJSONImpl(String jsonStr, boolean storeJSON) throws TwitterException {
+        super((JSONObject) null);
         init(jsonStr, storeJSON);
     }
 
@@ -83,6 +84,7 @@ import java.util.Iterator;
 
 
     /*package*/ TrendsJSONImpl(Date asOf, Location location, Date trendAt, Trend[] trends) {
+        super((JSONObject) null);
         this.asOf = asOf;
         this.location = location;
         this.trendAt = trendAt;

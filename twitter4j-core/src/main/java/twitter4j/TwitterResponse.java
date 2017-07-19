@@ -45,5 +45,5 @@ public interface TwitterResponse extends java.io.Serializable {
     int READ_WRITE = 2;
     int READ_WRITE_DIRECTMESSAGES = 3;
 
-
+    JSONObject getJson();
 }

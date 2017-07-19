@@ -85,13 +85,13 @@ import java.util.Date;
     }
 
     /*package*/UserJSONImpl(JSONObject json) throws TwitterException {
-        super();
+        super(json);
         init(json);
     }
 
     /* Only for serialization purposes. */
     /*package*/UserJSONImpl() {
-
+        super((JSONObject) null);
     }
 
     private void init(JSONObject json) throws TwitterException {

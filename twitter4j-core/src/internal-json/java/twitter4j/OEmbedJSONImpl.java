@@ -42,7 +42,7 @@ public class OEmbedJSONImpl extends TwitterResponseImpl implements OEmbed, java.
     }
 
     /*package*/ OEmbedJSONImpl(JSONObject json) throws TwitterException {
-        super();
+        super(json);
         init(json);
     }
 

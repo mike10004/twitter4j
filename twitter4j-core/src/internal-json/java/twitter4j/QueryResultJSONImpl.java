@@ -66,7 +66,7 @@ import java.util.List;
     }
 
     /*package*/ QueryResultJSONImpl(Query query) {
-        super();
+        super((JSONObject) null);
         sinceId = query.getSinceId();
         count = query.getCount();
         tweets = new ArrayList<Status>(0);

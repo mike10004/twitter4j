@@ -51,13 +51,13 @@ final class PlaceJSONImpl extends TwitterResponseImpl implements Place, java.io.
     }
 
     PlaceJSONImpl(JSONObject json) throws TwitterException {
-        super();
+        super(json);
         init(json);
     }
 
     /* For serialization purposes only. */
     PlaceJSONImpl() {
-
+        super((JSONObject) null);
     }
 
     private void init(JSONObject json) throws TwitterException {

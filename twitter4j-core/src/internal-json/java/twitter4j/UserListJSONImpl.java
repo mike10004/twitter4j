@@ -56,7 +56,7 @@ import java.util.Date;
     }
 
     /*package*/ UserListJSONImpl(JSONObject json) throws TwitterException {
-        super();
+        super(json);
         init(json);
     }
 

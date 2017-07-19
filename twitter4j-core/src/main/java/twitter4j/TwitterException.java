@@ -339,4 +339,9 @@ public class TwitterException extends Exception implements TwitterResponse, Http
         }
         return statusCode + ":" + cause;
     }
+
+    @Override
+    public JSONObject getJson() {
+        return null;
+    }
 }

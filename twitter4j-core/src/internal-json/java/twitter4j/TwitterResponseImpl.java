@@ -30,14 +30,20 @@ package twitter4j;
     private static final long serialVersionUID = 7422171124869859808L;
     private transient RateLimitStatus rateLimitStatus = null;
     private final transient int accessLevel;
+    private final transient JSONObject json;
 
-    public TwitterResponseImpl() {
-        accessLevel = NONE;
+    protected TwitterResponseImpl(JSONObject json) {
+        this(json, NONE);
     }
 
-    public TwitterResponseImpl(HttpResponse res) {
+    protected TwitterResponseImpl(JSONObject json, int accessLevel) {
+        this.accessLevel = accessLevel;
+        this.json = json;
+    }
+
+    public TwitterResponseImpl(HttpResponse res) throws TwitterException {
+        this(res == null ? null : res.asJSONObject(), ParseUtil.toAccessLevel(res));
         this.rateLimitStatus = RateLimitStatusJSONImpl.createFromResponseHeader(res);
-        accessLevel = ParseUtil.toAccessLevel(res);
     }
 
     @Override
@@ -48,5 +54,10 @@ package twitter4j;
     @Override
     public int getAccessLevel() {
         return accessLevel;
+    }
+
+    @Override
+    public JSONObject getJson() {
+        return json;
     }
 }

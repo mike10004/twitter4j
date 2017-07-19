@@ -57,4 +57,9 @@ class ResponseListImpl<T> extends ArrayList<T> implements ResponseList<T> {
     public int getAccessLevel() {
         return accessLevel;
     }
+
+    @Override
+    public JSONObject getJson() {
+        return null;
+    }
 }

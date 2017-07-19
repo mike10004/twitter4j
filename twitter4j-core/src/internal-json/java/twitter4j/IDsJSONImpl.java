@@ -43,6 +43,7 @@ import java.util.Arrays;
     }
 
     /*package*/ IDsJSONImpl(String json) throws TwitterException {
+        super((JSONObject) null);
         init(json);
     }
 

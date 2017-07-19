@@ -48,6 +48,7 @@ import java.util.Date;
     }
 
     /*package*/ SavedSearchJSONImpl(JSONObject savedSearch) throws TwitterException {
+        super(savedSearch);
         init(savedSearch);
     }
 

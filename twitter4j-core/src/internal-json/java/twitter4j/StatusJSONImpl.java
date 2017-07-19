@@ -77,7 +77,7 @@ import static twitter4j.ParseUtil.getDate;
     }
 
     /*package*/StatusJSONImpl(JSONObject json, Configuration conf) throws TwitterException {
-        super();
+        super(json);
         init(json);
         if (conf.isJSONStoreEnabled()) {
             TwitterObjectFactory.registerJSONObject(this, json);
@@ -85,13 +85,13 @@ import static twitter4j.ParseUtil.getDate;
     }
 
     /*package*/ StatusJSONImpl(JSONObject json) throws TwitterException {
-        super();
+        super(json);
         init(json);
     }
 
     /* Only for serialization purposes. */
     /*package*/ StatusJSONImpl() {
-
+        super((JSONObject) null);
     }
 
     private void init(JSONObject json) throws TwitterException {

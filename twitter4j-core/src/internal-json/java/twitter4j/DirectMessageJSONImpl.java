@@ -54,6 +54,7 @@ import java.util.Date;
     }
 
     /*package*/DirectMessageJSONImpl(JSONObject json) throws TwitterException {
+        super(json);
         init(json);
     }
 
