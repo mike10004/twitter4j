@@ -3,7 +3,7 @@
 
     <groupId>com.github.mike10004</groupId>
     <artifactId>twitter4j-core</artifactId>
-    <version>4.0.4p2</version>
+    <version>4.0.4p3</version>
     <packaging>jar</packaging>
     <name>twitter4j-core</name>
     <description>A Java library for the Twitter API</description>
@@ -282,7 +282,6 @@
     </build>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8
-        </project.reporting.outputEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 </project>

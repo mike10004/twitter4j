@@ -34,7 +34,12 @@ import java.util.Arrays;
 
     /*package*/ IDsJSONImpl(HttpResponse res, Configuration conf) throws TwitterException {
         super(res);
-        String json = res.asString();
+        /*
+         * We have to reproduce the JSON here because res.asString() would try
+         * to read the stream (which has already been consumed in order to produce
+         * the JSON object).
+         */
+        String json = getJson().toString();
         init(json);
         if (conf.isJSONStoreEnabled()) {
             TwitterObjectFactory.clearThreadLocalMap();
